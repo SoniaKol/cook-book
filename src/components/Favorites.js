@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom";
+import BackButton from "./BackButton";
+import Header from "./Header";
 
 const Favorites = () => {
   return (
     <div className="favorites">
-      <NavLink to="/">Back</NavLink>
+      <Header />
+      <BackButton />
       <h1>Favorite recipes</h1>
     </div>
   );

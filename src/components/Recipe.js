@@ -1,9 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
+import Header from "./Header";
+import BackButton from "./BackButton";
 
 const Recipe = () => {
-  const nav = useNavigate();
   const { id } = useParams();
   const url = `${BASE_URL}${KEY}${APIendpoints.lookupById}${id}`;
   const { data, loading, error } = useFetch(url);
@@ -38,7 +39,8 @@ const Recipe = () => {
 
   return (
     <div>
-      <button onClick={() => nav(-1)}>Back</button>
+      <Header />
+      <BackButton />
 
       <h1>{title}</h1>
       <img src={img} alt={title} style={{ width: "200px" }} />
