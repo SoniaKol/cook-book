@@ -1,19 +1,11 @@
-import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  const fetchSearchingData = async (url) => {
-    try {
-      const response = await fetch(url);
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const navigate = useNavigate();
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
+
     const searchValue = encodeURIComponent(
       e.target[0].value.trim().toLowerCase()
     ).replace("%20", "_");
@@ -22,28 +14,18 @@ const Search = () => {
       return;
     }
 
-    if (searchValue.length === 1) {
-      fetchSearchingData(
-        `${BASE_URL}${KEY}/${APIendpoints.searchByLetter}${searchValue}`
-      );
-      console.log("search by letter");
-    } else {
-      fetchSearchingData(
-        `${BASE_URL}${KEY}/${APIendpoints.searchByName}${searchValue}`
-      );
-      console.log("search by name");
-    }
-
-    console.log(searchValue);
+    navigate(`/search/${searchValue}`);
   };
 
   return (
-    <form onSubmit={formSubmitHandler}>
-      <label htmlFor="">
-        <input type="text" placeholder="Search..." />
-      </label>
-      <button>Search</button>
-    </form>
+    <>
+      <form onSubmit={formSubmitHandler}>
+        <label>
+          <input type="text" placeholder="Search..." name="search-input" />
+        </label>
+        <button>Search</button>
+      </form>
+    </>
   );
 };
 
