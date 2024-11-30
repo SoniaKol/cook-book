@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
 import Header from "./Header";
 import BackButton from "./BackButton";
+import FavButton from "./FavButton";
 
 const Recipe = () => {
   const { id } = useParams();
@@ -43,9 +44,10 @@ const Recipe = () => {
       <BackButton />
 
       <h1>{title}</h1>
+      <FavButton id={id} />
       <img src={img} alt={title} style={{ width: "200px" }} />
-      <p>{category}</p>
-      <p>{country}</p>
+      <Link to={`/categories/${category.toLowerCase()}`}>{category}</Link>
+      <Link to={`/area/${country.toLowerCase()}`}>{country}</Link>
       <ul>
         {ingredients.map((item, index) => (
           <li key={index}>{item}</li>

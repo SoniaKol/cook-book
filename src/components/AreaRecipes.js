@@ -15,7 +15,7 @@ const AreaRecipes = () => {
     <div>
       <Header />
       <BackButton />
-      <h1>Recipes from area: {area}</h1>
+      <h1>Recipes from area: {area.toUpperCase()}</h1>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {data && <RecipeList data={data} />}

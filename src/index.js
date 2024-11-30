@@ -12,27 +12,30 @@ import MainIngredientList from "./components/MainIngredientList";
 import AreaList from "./components/AreaList";
 import AreaRecipes from "./components/AreaRecipes";
 import IngredientRecipes from "./components/IngredientRecipes";
+import { RecipeProvider } from "./components/RecipeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/categories" element={<CategoriesList />} />
-          <Route path="/ingredients" element={<MainIngredientList />} />
-          <Route path="/area" element={<AreaList />} />
-        </Route>
-        <Route path="/categories/:category" element={<CategoryRecipes />} />
-        <Route
-          path="/ingredients/:ingredient"
-          element={<IngredientRecipes />}
-        />
-        <Route path="/area/:area" element={<AreaRecipes />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/search/:searchValue" element={<SearchResult />} />
-        <Route path="/recipe/:id" element={<Recipe />} />
-      </Routes>
+      <RecipeProvider>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="/categories" element={<CategoriesList />} />
+            <Route path="/ingredients" element={<MainIngredientList />} />
+            <Route path="/area" element={<AreaList />} />
+          </Route>
+          <Route path="/categories/:category" element={<CategoryRecipes />} />
+          <Route
+            path="/ingredients/:ingredient"
+            element={<IngredientRecipes />}
+          />
+          <Route path="/area/:area" element={<AreaRecipes />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/search/:searchValue" element={<SearchResult />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+        </Routes>
+      </RecipeProvider>
     </Router>
   </React.StrictMode>
 );

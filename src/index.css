@@ -16,3 +16,16 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
+.fav-btn {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.img-fav {
+  width: 40px;
+  height: 40px;
+}
