@@ -1,0 +1,12 @@
+.fav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  /* position: absolute;
+  top: 0.5em;
+  right: 0.5em; */
+}
+
+.fav-button img {
+  height: 2em;
+}

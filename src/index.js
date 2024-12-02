@@ -12,7 +12,7 @@ import MainIngredientList from "./components/MainIngredientList";
 import AreaList from "./components/AreaList";
 import AreaRecipes from "./components/AreaRecipes";
 import IngredientRecipes from "./components/IngredientRecipes";
-import { RecipeProvider } from "./components/RecipeContext";
+import { RecipeProvider } from "./context/RecipeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

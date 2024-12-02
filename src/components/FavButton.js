@@ -1,8 +1,9 @@
 import heartIcon from "../assets/heart-regular.svg";
 import favoriteHeartIcon from "../assets/heart-solid.svg";
 import { useState } from "react";
-import { RecipeContext } from "./RecipeContext";
+import { RecipeContext } from "../context/RecipeContext";
 import { useContext } from "react";
+import "../styles/favButton.css";
 
 const FavButton = ({ id }) => {
   const [favorites, setFavorites] = useContext(RecipeContext);
@@ -20,7 +21,7 @@ const FavButton = ({ id }) => {
   };
 
   return (
-    <button className="fav-btn" onClick={addToFavoriteHandler}>
+    <button className="fav-button" onClick={addToFavoriteHandler}>
       <img
         src={isFavorite ? favoriteHeartIcon : heartIcon}
         alt="heart"

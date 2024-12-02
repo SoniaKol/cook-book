@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  border-radius: 33px;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: var(--white-200);
+}
+
+.card .fav-button {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  /* padding: 20px; */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}

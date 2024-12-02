@@ -1,31 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:wght@700&family=Roboto:wght@100;400;500;700&display=swap");
+@import "modern-normalize/modern-normalize.css";
+
+:root {
+  --yellow-100: #ffe9a1;
+  --yellow-300: #ffdb63;
+  --yellow-500: #ffcd25;
+  --neutral-800: #2c2b2b;
+  --neutral-400: #858585;
+  --neutral-300: #c6c6c6d6;
+  --neutral-150: #c6c6c676;
+  --neutral-950: #000;
+  --white-100: #fff;
+  --white-200: #f5f2f2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--others-white);
+  color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
 }
 
 ul {
   list-style-type: none;
-  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
 }
 
-.fav-btn {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: none;
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  font-family: inherit;
+}
+
+button {
   cursor: pointer;
 }
 
-.img-fav {
-  width: 40px;
-  height: 40px;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

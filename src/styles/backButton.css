@@ -1,0 +1,17 @@
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 145px;
+  height: 45px;
+  border-radius: 23px;
+  background: var(--yellow-300);
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease-in-out;
+  margin-left: 1em;
+}
+
+.back-button:hover {
+  background: var(--yellow-500);
+}

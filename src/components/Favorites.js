@@ -1,6 +1,6 @@
 import BackButton from "./BackButton";
 import Header from "./Header";
-import { RecipeContext } from "./RecipeContext";
+import { RecipeContext } from "../context/RecipeContext";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
 import RecipeListCard from "./RecipeListCard";

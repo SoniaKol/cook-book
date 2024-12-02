@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "../styles/search.css";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -19,11 +20,16 @@ const Search = () => {
 
   return (
     <>
-      <form onSubmit={formSubmitHandler}>
-        <label>
-          <input type="text" placeholder="Search..." name="search-input" />
+      <form onSubmit={formSubmitHandler} className="search-form">
+        <label className="search-label">
+          <input
+            type="text"
+            placeholder="Search..."
+            name="search-input"
+            className="search-input"
+          />
         </label>
-        <button>Search</button>
+        <button className="search-button">Search</button>
       </form>
     </>
   );
