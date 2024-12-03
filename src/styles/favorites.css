@@ -1,4 +1,11 @@
-.recipe-list {
+.favorites-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 20px;
+  text-align: center;
+}
+
+.favorites-list {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -6,11 +13,4 @@
   margin: 0 auto;
   max-width: 1200px;
   gap: 10px;
-}
-
-.title {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 20px;
-  text-align: center;
 }

@@ -4,6 +4,7 @@ import useFetch from "../hooks/useFetch";
 import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
 import RecipeList from "./RecipeList";
 import BackButton from "./BackButton";
+import "../styles/recipeList.css";
 
 const CategoryRecipes = () => {
   const { category } = useParams();
@@ -16,7 +17,7 @@ const CategoryRecipes = () => {
     <div>
       <Header />
       <BackButton />
-      <h1>Recipes from category: {category}</h1>
+      <h1 className="title">Recipes from category: {category}</h1>
       {isLoading && <div>Loading...</div>}
       {error && <div>{error.message}</div>}
       {data && <RecipeList data={data} />}

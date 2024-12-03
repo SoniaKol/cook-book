@@ -4,6 +4,8 @@ import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
 import Header from "./Header";
 import BackButton from "./BackButton";
 import FavButton from "./FavButton";
+import YoutubeLogo from "../assets/Youtube_logo.png";
+import "../styles/recipe.css";
 
 const Recipe = () => {
   const { id } = useParams();
@@ -38,26 +40,56 @@ const Recipe = () => {
     }
   }
 
+  const description = instructions.trim().split("\r\n");
+
   return (
-    <div>
+    <div className="recipe">
       <Header />
       <BackButton />
 
-      <h1>{title}</h1>
-      <FavButton id={id} />
-      <img src={img} alt={title} style={{ width: "200px" }} />
-      <Link to={`/categories/${category.toLowerCase()}`}>{category}</Link>
-      <Link to={`/area/${country.toLowerCase()}`}>{country}</Link>
-      <ul>
+      <div className="recipe-title-wrap">
+        <h1 className="recipe-title">{title}</h1>
+        <FavButton id={id} />
+      </div>
+      <img src={img} alt={title} className="recipe-img" />
+      <div className="recipe-category">
+        <Link
+          className="recipe-link"
+          to={`/categories/${category.toLowerCase()}`}
+        >
+          {category}
+        </Link>
+        <Link className="recipe-link" to={`/area/${country.toLowerCase()}`}>
+          {country}
+        </Link>
+      </div>
+
+      <ul className="recipe-ingredients-list">
         {ingredients.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className="recipe-ingredients-item" key={index}>
+            <label className="recipe-ingredients-label">
+              <input
+                type="checkbox"
+                className="visually-hidden recipe-ingredients-checkbox"
+              />
+              <span className="checkbox-span"></span>
+              <p>{item}</p>
+            </label>
+          </li>
         ))}
       </ul>
-      <p>{instructions}</p>
+      <ul className="recipe-description-list">
+        {description.map((item, index) => (
+          <li className="recipe-description-item" key={index}>
+            {item}
+          </li>
+        ))}
+      </ul>
 
       {video && (
-        <a href={video} target="blank">
-          Video
+        <a href={video} target="blank" className="recipe-video-link">
+          <img src={YoutubeLogo} alt="youtube logo" />
+          Watch video on YouTube
         </a>
       )}
     </div>

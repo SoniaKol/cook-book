@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "../styles/filters.css";
 
 const Filters = () => {
@@ -9,7 +9,16 @@ const Filters = () => {
       <ul className="filters">
         {filters.map((filter) => (
           <li key={filter} className="filters-item">
-            <Link to={filter.toLowerCase()}>{filter}</Link>
+            <NavLink
+              to={filter.toLowerCase()}
+              style={({ isActive }) => {
+                return {
+                  backgroundColor: isActive ? "#ffdb63" : "inherit",
+                };
+              }}
+            >
+              {filter}
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -1,0 +1,26 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.categories-item {
+  background-color: var(--neutral-150);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.categories-item-link {
+  display: block;
+  padding: 20px;
+}
+
+.categories-item-title {
+  color: var(--neutral-950);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 10px auto;
+  text-align: center;
+}

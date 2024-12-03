@@ -4,6 +4,7 @@ import { RecipeContext } from "../context/RecipeContext";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { BASE_URL, KEY, APIendpoints } from "../data/APIdata";
 import RecipeListCard from "./RecipeListCard";
+import "../styles/favorites.css";
 
 const Favorites = () => {
   const [favorites] = useContext(RecipeContext);
@@ -43,12 +44,12 @@ const Favorites = () => {
     <div className="favorites">
       <Header />
       <BackButton />
-      <h1>Favorite recipes</h1>
+      <h1 className="favorites-title">Favorite recipes</h1>
       {favorites.length === 0 && <p>No favorite recipes</p>}
       {favoriteData.length > 0 && (
-        <ul>
+        <ul className="favorites-list">
           {favoriteData.map((item) => (
-            <li key={item.meals[0].idMeal}>
+            <li key={item.meals[0].idMeal} className="favorites-item">
               <RecipeListCard data={item.meals[0]} />
             </li>
           ))}
