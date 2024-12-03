@@ -57,8 +57,8 @@ This application uses [TheMealDB API](https://www.themealdb.com/api.php) to retr
 
 ## Deployment
 
-The Cook-Book application is deployed and available online. Check it out at:
-[Deployment Link Here]
+The Cook-Book application is deployed and available online. Check it out at
+[Deployment Link Here](https://sofias-cook-book-react-app.netlify.app/)
 
 ## Contributions
 
